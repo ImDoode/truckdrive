@@ -1,0 +1,162 @@
+:root {
+  --blue-color: #1c5eaa;
+}
+.header {
+  height: unset !important;
+}
+.top-description {
+  font-size: 18px;
+  color: #fff;
+  background-color: var(--blue-color);
+  font-size: 18px;
+  text-align: center;
+  padding: 10px 15px;
+  @media screen and (max-width: 992px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 620px) {
+    font-size: 12px;
+    padding: 0 12px;
+  }
+}
+.newheader {
+  display: block;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+  @media screen and (max-width: 992px) {
+    grid-template-rows: 1fr;
+    grid-row-gap: 0;
+  }
+  @media screen and (max-width: 620px) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  &__logo-container {
+    grid-area: 1 / 1 / 3 / 3;
+    @media screen and (max-width: 1199px) {
+      grid-area: 1 / 1 / 2 / 3;
+      max-width: 100px;
+    }
+    @media screen and (max-width: 992px) {
+      grid-area: 1 / 2 / 2 / 4;
+      max-width: 70px;
+    }
+    @media screen and (max-width: 620px) {
+      grid-area: 1 / 2 / 2 / 4;
+    }
+  }
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 30px;
+    grid-area: 1 / 3 / 2 / 13;
+    @media screen and (max-width: 992px) {
+      grid-area: 1 / 3 / 2 / 13;
+      .newheader__working-time,
+      .newheader__user-controls {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 620px) {
+      .newheader__phone {
+        display: none;
+      }
+    }
+  }
+  &__nav {
+    grid-area: 2 / 3 / 3 / 13;
+    align-self: end;
+    @media screen and (max-width: 1199px) {
+      align-self: unset;
+      grid-area: 2 / 1 / 3 / 13;
+    }
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+  &__burger {
+    grid-area: 1 / 1 / 2 / 2;
+    align-self: center;
+    @media screen and (min-width: 993px) {
+      display: none;
+    }
+  }
+  &__phone {
+    flex: 1;
+    text-align: center;
+    .dropdown-content {
+      margin-left: unset; // удалить отступ в других стилях
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &__working-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &::after {
+      content: url('https://truckdrive.ru/i/clocks.png');
+    }
+    .header-contact {
+      height: 40px;
+    }
+    .header-top__contact,
+    .header-contact__phone,
+    .header-contact {
+      width: auto;
+      margin: 0;
+      // удалить стили выше коммента из старых стилей, то есть найти и удалить ширину и отступы для .header-top__contact и .header-contact 
+    }
+  }
+  &__icon-links {
+    display: flex;
+    gap: 10px;
+
+    .header-top-row__point {// удалить отступ в легаси
+      margin: 0;
+    }
+  }
+  .header-cart {
+    margin: 0;  // удалить отступ в других стилях
+  }
+  .header-menu {
+    width: auto;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    &__list-item {
+      width: auto !important;
+      margin: 0 !important;
+      &:last-child .header-top__menu-link {
+        border-right: 2px solid #1c5eaa;
+      }
+      &:last-child::after {
+        content: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  // это стили убивают те, что в легаси
+  // нужно удалить легаси стили и затем эти тоже
+  // удалить в легаси стили для 620px и 992px
+  .header .header-top__contact_middle,
+  .header .header-top__cont-xs {
+    position: initial;
+    margin-bottom: 10px;
+  }
+  .header .header-top__search-col_middle {
+    margin-top: 0;
+  }
+  // всё что выше найти и удалить, ниже оставить
+  .header .header-top__contact_middle {
+    margin-bottom: 10px;
+  }
+}
