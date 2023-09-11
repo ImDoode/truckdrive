@@ -95,7 +95,7 @@
   grid-auto-rows: min-content;
   grid-column-gap: 20px;
 }
-.newheader__main .newheader__user-controls > *, .newheader__main .newheader__user-controls .header-user-details, .newheader__main .newheader__user-controls .header-user-name {
+.newheader__main .newheader__user-controls .header-user-details, .newheader__main .newheader__user-controls .header-user-name {
   color: #1E76D0;
   font-size: 13px;
   line-height: inherit;
@@ -199,6 +199,9 @@
 }
 .newheader .header-menu__list-item:last-child::after {
   content: none;
+}
+.newheader .login-hdr {
+  margin: 0;
 }
 
 @media (max-width: 992px) {

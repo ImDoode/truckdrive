@@ -81,7 +81,6 @@
       grid-auto-rows: min-content;
       //column-count: 2;
       grid-column-gap: 20px;
-      & > *,
       & .header-user-details,
       & .header-user-name {
         color: #1E76D0;
@@ -193,6 +192,9 @@
         content: none;
       }
     }
+  }
+  .login-hdr {
+    margin: 0;
   }
 }
 
